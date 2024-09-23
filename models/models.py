@@ -11,9 +11,9 @@ def inserir_cliente(payload):
                 sql, (payload["nome"], payload["endereco"], payload["telefone"])
             )
             conn.commit()
-            print("Cliente inserido com sucesso.")
+            print("Cliente criado com sucesso.")
         except Exception as e:
-            print(f"Erro ao inserir cliente: {e}")
+            print(f"Erro ao criar cliente: {e}")
             conn.rollback()
         finally:
             cursor.close()
@@ -30,7 +30,7 @@ def ler_clientes():
             resultados = cursor.fetchall()
             return resultados
         except Exception as e:
-            print(f"Erro ao ler clientes: {e}")
+            print(f"Erro ao buscar clientes: {e}")
             return []
         finally:
             cursor.close()
@@ -89,9 +89,9 @@ def inserir_produto(payload):
                 ),
             )
             conn.commit()
-            print("Produto inserido com sucesso.")
+            print("Produto criado com sucesso.")
         except Exception as e:
-            print(f"Erro ao inserir produto: {e}")
+            print(f"Erro ao criar produto: {e}")
             conn.rollback()
         finally:
             cursor.close()
@@ -108,7 +108,7 @@ def ler_produtos():
             resultados = cursor.fetchall()
             return resultados
         except Exception as e:
-            print(f"Erro ao ler produtos: {e}")
+            print(f"Erro ao buscar produtos: {e}")
             return []
         finally:
             cursor.close()
